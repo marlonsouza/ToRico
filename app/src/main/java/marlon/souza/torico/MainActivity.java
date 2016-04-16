@@ -168,6 +168,11 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
         CounterMoneyService.BinderVeryCrazy binderVeryCrazy = (CounterMoneyService.BinderVeryCrazy) service;
         counterMoneyService = binderVeryCrazy.getCounterMoneyService();
         counterMoneyService.setUnbelievableHandlerUi(unbelievableHandler);
+
+        WorkedTime refreshWorkedTime = counterMoneyService.getWorkedTime();
+        if(refreshWorkedTime!=null){
+            refreshValues(refreshWorkedTime);
+        }
     }
 
     @Override

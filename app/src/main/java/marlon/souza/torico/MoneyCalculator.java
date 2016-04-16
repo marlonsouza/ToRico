@@ -39,7 +39,7 @@ public class MoneyCalculator {
     }
 
     public BigDecimal getExtraValue(){
-        return getValueHour().multiply(extraPercent);
+        return getValueHour().multiply(extraPercent).add(getValueHour());
     }
 
     public String getValueHourFormatted(){
@@ -51,18 +51,11 @@ public class MoneyCalculator {
         BigDecimal myMoney = BigDecimal.ZERO;
         BigDecimal SESSENTA = new BigDecimal("60");
 
-        BigDecimal absoluteHours = BigDecimal
-                    .valueOf(absoluteSeconds.doubleValue())
+        BigDecimal valueSeconds = getExtraValue()
                     .divide(SESSENTA, 2, RoundingMode.HALF_UP)
                     .divide(SESSENTA, 2, RoundingMode.HALF_UP);
 
-        if(absoluteHours.doubleValue()>hoursWorked.doubleValue()){
-            BigDecimal extra = absoluteHours.subtract(hoursWorked);
-            myMoney = myMoney.add(extra.multiply(getExtraValue()));
-            myMoney = myMoney.add(hoursWorked.multiply(getValueHour()));
-        }else{
-            myMoney = myMoney.add(absoluteHours.multiply(getValueHour()));
-        }
+        myMoney = myMoney.add(valueSeconds.multiply(BigDecimal.valueOf(absoluteSeconds.longValue())));
 
         return format.format(myMoney.doubleValue());
     }

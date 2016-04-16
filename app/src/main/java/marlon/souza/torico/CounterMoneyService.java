@@ -50,6 +50,10 @@ public class CounterMoneyService extends Service implements Runnable {
         return state;
     }
 
+    public WorkedTime getWorkedTime() {
+        return workedTime;
+    }
+
     @Override
     public void onCreate() {
         this.workedTime = new WorkedTime();
@@ -72,10 +76,6 @@ public class CounterMoneyService extends Service implements Runnable {
 
                 this.unbelievableHandlerUi.sendMessage(message);
             }
-        }
-
-        if(!state.equals(CounterMoneyStatus.START)){
-            stopSelf();
         }
     }
 
