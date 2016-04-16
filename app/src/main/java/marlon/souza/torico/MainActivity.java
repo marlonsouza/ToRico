@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
 
     public void stop(View view){
         counterMoneyService.stop();
+
         changeStateButtons();
     }
 

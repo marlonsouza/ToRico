@@ -40,6 +40,9 @@ public class CounterMoneyService extends Service implements Runnable {
 
     public void stop(){
         state = CounterMoneyStatus.STOP;
+        this.workedTime = new WorkedTime();
+
+        sendMessageToView(workedTime);
     }
 
     public void setUnbelievableHandlerUi(Handler unbelievableHandlerUi){
@@ -68,15 +71,19 @@ public class CounterMoneyService extends Service implements Runnable {
             if(unbelievableHandlerUi!=null){
                 this.workedTime.moreSecond();
 
-                Bundle bundleVeryCrazy = new Bundle();
-                bundleVeryCrazy.putSerializable("MONEY_TIME", this.workedTime);
-
-                Message message = new Message();
-                message.setData(bundleVeryCrazy);
-
-                this.unbelievableHandlerUi.sendMessage(message);
+                sendMessageToView(this.workedTime);
             }
         }
+    }
+
+    private void sendMessageToView(WorkedTime toSend) {
+        Bundle bundleVeryCrazy = new Bundle();
+        bundleVeryCrazy.putSerializable("MONEY_TIME", toSend);
+
+        Message message = new Message();
+        message.setData(bundleVeryCrazy);
+
+        this.unbelievableHandlerUi.sendMessage(message);
     }
 
     public class BinderVeryCrazy extends Binder {

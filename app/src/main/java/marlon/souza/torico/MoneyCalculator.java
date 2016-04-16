@@ -43,7 +43,7 @@ public class MoneyCalculator {
     }
 
     public String getValueHourFormatted(){
-        return format.format(getValueHour().doubleValue());
+        return format.format(getExtraValue().doubleValue());
     }
 
 
