@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/gray"
+        android:layout_margin="@dimen/margin_default"
+        card_view:cardCornerRadius="@dimen/radius_default"
+        >
+        <LinearLayout
+            android:id="@+id/value_hour_layout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/value_hour_label"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/value_hour"
+                android:textSize="@dimen/text_size"
+                android:gravity="left"/>
+            <TextView
+                android:id="@+id/value_hour"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:text="R$0,00"
+                android:gravity="right" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/orange"
+        android:layout_margin="@dimen/margin_default"
+        card_view:cardCornerRadius="@dimen/radius_default"
+        >
+        <LinearLayout
+            android:id="@+id/time_layout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/time_label"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textSize="@dimen/text_size"
+                android:gravity="left"/>
+            <TextView
+                android:id="@+id/time"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:text="00:00:00"
+                android:gravity="right" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/sea"
+        android:layout_margin="@dimen/margin_default"
+        card_view:cardCornerRadius="@dimen/radius_default"
+        >
+        <LinearLayout
+            android:id="@+id/i_am_rich_layout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/i_am_rich_label"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/i_am_rich"
+                android:textSize="@dimen/text_size"
+                android:gravity="left"/>
+            <TextView
+                android:id="@+id/i_am_rich"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R$0,00"
+                android:textSize="@dimen/text_size"
+                android:gravity="right" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/iniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        android:layout_below="@id/i_am_rich_layout"
+        android:onClick="play"
+        android:text="@string/start"/>
+    <Button
+        android:id="@+id/pausar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iniciar"
+        android:layout_marginRight="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:onClick="pause"
+        android:text="@string/pause"/>
+    <Button
+        android:id="@+id/parar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pausar"
+        android:layout_marginRight="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:onClick="stop"
+        android:text="@string/stop" />
+</LinearLayout>

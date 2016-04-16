@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ToRico</string>
+    <string name="settings">Configurações</string>
+    <string name="gross_salary">Salário Bruto</string>
+    <string name="start">Iniciar</string>
+    <string name="pause">Pausar</string>
+    <string name="stop">Parar</string>
+    <string name="value_hour">Valor por Hora</string>
+    <string name="time">Tempo trabalhado</string>
+    <string name="i_am_rich">Tô Rico</string>
+    <string name="worked_hours">Horas Trabalhadas por Mês</string>
+    <string name="extra_percent">Percentual Extra sobre Hora</string>
+    <string name="salary_informations">Informações Salariais</string>
+</resources>

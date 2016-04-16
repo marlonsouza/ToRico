@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/salary_informations">
+        <EditTextPreference
+            android:id="@+id/salario_bruto"
+            android:title="@string/gross_salary"
+            android:inputType="numberDecimal"
+            android:key="grossSalary"/>
+        <EditTextPreference
+            android:id="@+id/worked_hours"
+            android:title="@string/worked_hours"
+            android:inputType="number"
+            android:key="hoursWorked"/>
+        <EditTextPreference
+            android:id="@+id/extra_percent"
+            android:title="@string/extra_percent"
+            android:inputType="numberDecimal"
+            android:key="extraPercent"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
