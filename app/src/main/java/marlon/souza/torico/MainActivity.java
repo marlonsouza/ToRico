@@ -135,13 +135,20 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
         String hoursWorked = getPreference(preferences, KeyPreference.HOURS_WORKED);
         String extraPercent = getPreference(preferences, KeyPreference.EXTRA_PERCENT);
 
-
-        MoneyCalculator moneyCalculator = MoneyCalculator.of(new BigDecimal(salary), new BigDecimal(hoursWorked), new BigDecimal(extraPercent));
+        MoneyCalculator moneyCalculator =
+                MoneyCalculator.of(
+                    stringToBigDecimal(salary),
+                    stringToBigDecimal(hoursWorked),
+                    stringToBigDecimal(extraPercent));
 
         money.setText(moneyCalculator.calcule(workedTime.getAbsoluteSeconds()));
         time.setText(workedTime.generateTimer());
         valueHour.setText(moneyCalculator.getValueHourFormatted());
 
+    }
+
+    private BigDecimal stringToBigDecimal(String value){
+        return value.isEmpty() ? BigDecimal.ZERO : new BigDecimal(value);
     }
 
 
